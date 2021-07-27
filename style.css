@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  /* font-size: 62.5%; */
+  box-sizing: border-box;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container {
+  width: 25rem;
+  height: 35rem;
+  box-shadow: 1rem 1rem 2rem black;
+  align-items: flex-end;
+}
+
+.country__data {
+  margin: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+}
+
+.country {
+  display: flex;
+  flex-direction: column;
+}
+
+.country__flag {
+  background-image: url(imgs/bermix-studio-E6A1DWI-IXM-unsplash.jpg);
+  background-position: center;
+  background-size: cover;
+  width: 25rem;
+  height: 13rem;
+}
+
+.country__name {
+  text-align: center;
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+.country__region {
+  margin: .7rem 0;
+  font-size: 1.5rem;
+}
+
+.country__row {
+  margin: .5rem 0;
+  font-size: 1.3rem;
+}
