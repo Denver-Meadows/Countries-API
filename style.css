@@ -20,7 +20,7 @@ html {
 
 .container {
   width: 25rem;
-  height: 35rem;
+  height: 40rem;
   box-shadow: 1rem 1rem 2rem black;
   align-items: flex-end;
 }
@@ -39,11 +39,10 @@ html {
 }
 
 .country__flag {
-  background-image: url(imgs/bermix-studio-E6A1DWI-IXM-unsplash.jpg);
   background-position: center;
   background-size: cover;
-  width: 25rem;
-  height: 13rem;
+  width: 100%;
+
 }
 
 .country__name {

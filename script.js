@@ -1,4 +1,6 @@
 const countryContainer = document.querySelector('.container');
+const countryFlag = document.querySelector('.country__flag')
+
 
 const timeout = function(s) {
   return new Promise(function (_, reject) {
@@ -10,6 +12,7 @@ const timeout = function(s) {
 
  const countryData = {
    data: 0,
+   countryFlagUrl: 0,
  }
 
 const getCountryData = async function(country) {
@@ -21,6 +24,7 @@ const getCountryData = async function(country) {
     console.log(data[0])
     // Put the data in the state.
     countryData.data = data[0];
+    countryData.countryFlagUrl = data[0].flag;
     // Render the country with the data.  Must be called inside of the async function
     renderCountry(countryData.data)
 
@@ -33,7 +37,7 @@ const renderCountry = function(data) {
   const html = `
     <div class="container">
       <div class="country">
-        <div class="country__flag"></div>
+        <img src="${data.flag}" alt="#" class="country__flag">
         <div class="country__data">
           <h3 class="country__name">${data.name}</h3>
           <h4 class="country__region">${data.region}</h4>
@@ -49,4 +53,4 @@ const renderCountry = function(data) {
   countryContainer.insertAdjacentHTML('beforeend', html)
 }
 
-getCountryData('brazil');
+getCountryData('england');
