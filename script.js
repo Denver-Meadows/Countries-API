@@ -1,14 +1,8 @@
 const countryContainer = document.querySelector('.container');
-const countryFlag = document.querySelector('.country__flag')
+const countryFlag = document.querySelector('.country__flag');
+const submitBtn = document.querySelector('.submit-btn');
+const countryInput = document.querySelector('.country__input');
 
-
-const timeout = function(s) {
-  return new Promise(function (_, reject) {
-    setTimeout(function () {
-      reject(new Error(`Request took too long! Timeout after ${s} second`));
-    }, s * 1000);
-  });
- };
 
  const countryData = {
    data: 0,
@@ -51,6 +45,17 @@ const renderCountry = function(data) {
   `;
 
   countryContainer.insertAdjacentHTML('beforeend', html)
-}
+};
 
-getCountryData('england');
+
+
+submitBtn.addEventListener('click', () => {
+  console.log(countryInput.value);
+  countryContainer.innerHTML = '';
+
+  getCountryData(countryInput.value)
+  countryInput.value = '';
+
+});
+
+
