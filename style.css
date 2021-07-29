@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  background-color: blanchedalmond;
+  background-color: rgb(245, 234, 217);
 }
 
 .main-container {
@@ -23,11 +23,12 @@ body {
   padding: 5rem;
 }
 
-.container {
+.container.active {
   width: 25rem;
   height: 39rem;
   box-shadow: 1rem 1rem 2rem black;
   align-items: flex-end;
+  background-color: rgb(229, 236, 241);
 }
 
 .country__data {
@@ -48,7 +49,7 @@ body {
   background-color: rgb(101, 142, 204);
   color: aliceblue;
   border-radius: 10px;
-  box-shadow: 1rem 1rem 2rem black;
+  box-shadow: .5rem .5rem 1rem black;
 }
 
 .submit-btn:hover {

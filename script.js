@@ -9,6 +9,8 @@ const countryInput = document.querySelector('.country__input');
    countryFlagUrl: 0,
  }
 
+ // Handle errors and render them
+
 const getCountryData = async function(country) {
   try {
     const request = fetch(`https://restcountries.eu/rest/v2/name/${country}`);
@@ -16,10 +18,11 @@ const getCountryData = async function(country) {
     const data = await res.json();
     
     console.log(data[0])
-    // Put the data in the state.
+
     countryData.data = data[0];
     countryData.countryFlagUrl = data[0].flag;
-    // Render the country with the data.  Must be called inside of the async function
+
+    countryContainer.classList.add('active')
     renderCountry(countryData.data)
 
   } catch (err) {
@@ -50,12 +53,9 @@ const renderCountry = function(data) {
 
 
 submitBtn.addEventListener('click', () => {
-  console.log(countryInput.value);
   countryContainer.innerHTML = '';
-
   getCountryData(countryInput.value)
   countryInput.value = '';
-
 });
 
 
