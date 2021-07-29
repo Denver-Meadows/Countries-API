@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  background-color: rgb(245, 234, 217);
+  background-color: rgb(248, 245, 239);
 }
 
 .main-container {
@@ -20,7 +20,11 @@ body {
   align-items: center;
 }
 .country__input-form {
-  padding: 5rem;
+  padding: 3rem;
+  border: solid 2px rgb(101, 142, 204);
+  margin: 1rem;
+  border-radius: 15px;
+  background-color: rgb(229, 236, 241);
 }
 
 .container.active {
@@ -83,3 +87,8 @@ body {
   font-size: 1.3rem;
 }
 
+.render__error-msg {
+  font-size: 1.5rem;
+  color: rgb(230, 80, 61);
+  text-align: center;
+}

@@ -9,7 +9,6 @@ const countryInput = document.querySelector('.country__input');
    countryFlagUrl: 0,
  }
 
- // Handle errors and render them
 
 const getCountryData = async function(country) {
   try {
@@ -26,7 +25,7 @@ const getCountryData = async function(country) {
     renderCountry(countryData.data)
 
   } catch (err) {
-    console.error(err)
+    renderError();
   }
 };
 
@@ -50,12 +49,25 @@ const renderCountry = function(data) {
   countryContainer.insertAdjacentHTML('beforeend', html)
 };
 
+const renderError = function() {
+  const html = `
+    <div class="container">
+      <div class="country">
+        <p class="render__error-msg">Sorry, country not found. <br> Please try searching for another country.</p>
+        </div>
+      </div>
+    </div>
+  `;
 
+  countryContainer.insertAdjacentHTML('beforeend', html)
+}
 
 submitBtn.addEventListener('click', () => {
   countryContainer.innerHTML = '';
   getCountryData(countryInput.value)
   countryInput.value = '';
 });
+
+
 
 
