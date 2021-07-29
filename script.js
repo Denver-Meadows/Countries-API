@@ -3,12 +3,10 @@ const countryFlag = document.querySelector('.country__flag');
 const submitBtn = document.querySelector('.submit-btn');
 const countryInput = document.querySelector('.country__input');
 
-
  const countryData = {
-   data: 0,
-   countryFlagUrl: 0,
- }
-
+   data: '',
+   countryFlagUrl: '',
+ };
 
 const getCountryData = async function(country) {
   try {
@@ -16,8 +14,6 @@ const getCountryData = async function(country) {
     const res = await request;
     const data = await res.json();
     
-    console.log(data[0])
-
     countryData.data = data[0];
     countryData.countryFlagUrl = data[0].flag;
 
@@ -60,14 +56,23 @@ const renderError = function() {
   `;
 
   countryContainer.insertAdjacentHTML('beforeend', html)
-}
+};
 
 submitBtn.addEventListener('click', () => {
+  formSubmit();
+});
+
+const formSubmit = function() {
   countryContainer.innerHTML = '';
   getCountryData(countryInput.value)
   countryInput.value = '';
+};
+
+countryInput.addEventListener('keyup', (e) => {
+  if (e.keyCode === 13) {
+    e.preventDefault();
+    submitBtn.click();
+  }
 });
-
-
 
 
